@@ -141,8 +141,8 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
 
     # --- ULOŽENIE DO HISTÓRIE ---
     st.session_state.history.insert(0, {
-        "SD Cena": f"{sd_hodnota:.0f}",
-        "Yang Cena": f"{cena_yang:.2f}kk",
+        "SD cena na BM/IS": f"{sd_hodnota:.0f}",
+        "Yang cena v hre": f"{cena_yang:.2f}kk",
         "Ks": pocet,
         "Ušetríš": f"{rozdiel:.2f}kk" if rozdiel > 0 else f"{rozdiel:.2f}kk",
         "Kúp za": "SD" if rozdiel > 0 else "YANGY"
