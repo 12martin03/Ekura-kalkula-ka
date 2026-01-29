@@ -88,9 +88,9 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
     
     # Výpis výsledku
     if rozdiel > 0:
-        st.success(f"✅ **OPLATÍ SA ZA SD!**\n\nUšetríš: **{rozdiel:.2f}kk**")
+        st.success(f" **Kúp to za SD!**\n\nUšetríš: **{rozdiel:.2f}kk**")
     elif rozdiel < 0:
-        st.error(f"❌ **NEOPLATÍ SA!**\n\nKúp to radšej za Yangy.")
+        st.error(f" **Kúp to  za Yangy.**")
     else:
         st.info("⚖️ Ceny sú presne rovnaké.")
 
