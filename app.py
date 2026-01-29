@@ -39,7 +39,7 @@ def reset_app():
     # Kurz neresetujeme, ten si chceme pamätať
 
 # --- DIZAJN APLIKÁCIE ---
-st.title("Ekura - SD/Yang calc")
+st.title("Ekura - SD/Yang kalkulačka")
 
 # Tlačidlo pre otvorenie BM
 st.link_button("↗ Otvoriť Black Market", "https://www.ekura.cz/black_market/sindicate", type="secondary")
