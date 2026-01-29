@@ -58,10 +58,10 @@ if is_stack:
 # 3. Časť - Ceny (SD a Yangy vedľa seba)
 col1, col2 = st.columns(2)
 with col1:
-    sd_input = st.number_input("Cena šeku na BM v SD:", min_value=0.0, value=st.session_state.sd, step=1.0, key="sd_input")
+    sd_input = st.number_input("Cena CHCENEJ VECI na BM (v SD):", min_value=0.0, value=st.session_state.sd, step=1.0, key="sd_input")
     st.session_state.sd = sd_input
 with col2:
-    yang_input = st.text_input("Celková cena (Yang):", value=st.session_state.yang, placeholder="napr. 900kk", key="yang_input")
+    yang_input = st.text_input("Celková cena CHCENEJ VECI v hre (Yang):", value=st.session_state.yang, placeholder="napr. 900kk", key="yang_input")
     st.session_state.yang = yang_input
 
 st.write("") # Malá medzera
