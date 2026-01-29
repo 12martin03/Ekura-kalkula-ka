@@ -136,7 +136,7 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
         
         📉 **Break even point:**
         Ak by si to kúpil za týchto {sd_hodnota:.0f} SD, oplatilo by sa to dovtedy, 
-        kým by cena šeku na trhu klesla/stúpla MAX na **{bep_sek:.1f} SD**.
+        kým by cena šeku na trhu klesla/stúpla MAX na **{bep_sek:.1f} SD/1kkk**.
         """)
 
     # --- ULOŽENIE DO HISTÓRIE ---
