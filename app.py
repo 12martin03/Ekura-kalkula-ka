@@ -126,7 +126,7 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
         bep_sek = (sd_hodnota * 1000) / cena_yang
         
         st.info(f"""
-        📉 **Ceny by sa vyrovnali, keby 1kkk šek stál **{bep_sek:.1f} SD**.
+        📉 Ceny by sa vyrovnali, keby 1kkk šek stál **{bep_sek:.1f} SD**.
         *(Aktuálne rátaš s kurzom {st.session_state.kurz:.0f} SD)*
         """)
 
