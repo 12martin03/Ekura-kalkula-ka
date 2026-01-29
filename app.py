@@ -28,6 +28,7 @@ if 'sd_input' not in st.session_state: st.session_state.sd_input = 0.0
 if 'yang_input' not in st.session_state: st.session_state.yang_input = ""
 if 'pocet_input' not in st.session_state: st.session_state.pocet_input = 200
 if 'stack_mode' not in st.session_state: st.session_state.stack_mode = False
+if 'history' not in st.session_state: st.session_state.history = []
 
 # --- FUNKCIA RESET ---
 def reset_app():
@@ -121,16 +122,46 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
         if rozdiel_kus > 0:
             st.caption(f"Na jednom kuse ušetríš {rozdiel_kus:.3f}kk")
             
-    # --- SEM TO VLOŽ ---
+    # --- TARGET PRICE & BREAK EVEN POINT ---
     if cena_yang > 0 and sd_hodnota > 0:
+        # Vzorec pre BEP šeku: (Cena v SD * 1000) / Cena v Yangoch
         bep_sek = (sd_hodnota * 1000) / cena_yang
         
+        # Vzorec pre Target Price (Koľko SD by to malo stáť, aby si bol na nule)
+        target_sd = (cena_yang * aktualny_kurz) / 1000
+        
         st.info(f"""
-        📉 **BREAK EVEN POINT:** Ceny by sa vyrovnali, keby 1kkk šek stál **{bep_sek:.1f} SD**.
-        *(Aktuálne rátaš s kurzom 1kkk = {st.session_state.kurz:.0f} SD)*
+        🎯 **Target Price (Cieľová cena):**
+        Aby sa ti nákup vyrovnal cene v Yangoch, musel by si na BM zaplatiť max **{target_sd:.0f} SD**.
+        
+        📉 **Break Even Point (Bod zlomu šeku):**
+        Ak by si to kúpil za týchto {sd_hodnota:.0f} SD, oplatilo by sa to len vtedy, 
+        ak by cena šeku na trhu klesla/stúpla na **{bep_sek:.1f} SD**.
         """)
+
+    # --- ULOŽENIE DO HISTÓRIE ---
+    st.session_state.history.insert(0, {
+        "SD Cena": f"{sd_hodnota:.0f}",
+        "Yang Cena": f"{cena_yang:.2f}kk",
+        "Ks": pocet,
+        "Ušetríš": f"{rozdiel:.2f}kk" if rozdiel > 0 else f"{rozdiel:.2f}kk",
+        "Verdikt": "✅ Oplatí" if rozdiel > 0 else "❌ Neoplatí"
+    })
 
 # Reset tlačidlo - OPRAVENÉ
 st.write("")
 # Používame parameter on_click, ktorý spustí funkciu BEZPEČNE pred prekreslením
 st.button("RESET", type="secondary", use_container_width=True, on_click=reset_app)
+
+# --- HISTÓRIA VÝPOČTOV (Rozbaľovacie okno) ---
+st.write("")
+with st.expander("📜 História posledných výpočtov (Klikni pre zobrazenie)"):
+    if st.session_state.history:
+        st.dataframe(st.session_state.history, use_container_width=True)
+        
+        # Tlačidlo na vymazanie histórie
+        if st.button("Vymazať históriu"):
+            st.session_state.history = []
+            st.rerun()
+    else:
+        st.caption("Zatiaľ žiadna história v tejto relácii.")
