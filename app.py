@@ -47,12 +47,12 @@ st.divider() # Čiara pre oddelenie
 st.session_state.kurz = st.number_input("Cena šeku (1kkk) v SD:", value=st.session_state.kurz, step=1.0)
 
 # 2. Časť - Stack Logic (Viac kusov)
-is_stack = st.checkbox("Viac kusov (Stack)", value=st.session_state.stack_mode, key="stack_mode")
+is_stack = st.checkbox("Idem kupovať item, ktorý má viac kusov v jednom (Stack - napr. požehy)", value=st.session_state.stack_mode, key="stack_mode")
 
 pocet = 1
 if is_stack:
     # Ak je zaškrtnuté, ukáže sa toto políčko hneď pod tým
-    pocet = st.number_input("Celkový počet kusov:", min_value=1, value=st.session_state.pocet, step=1, key="pocet_input")
+    pocet = st.number_input("Celkový počet kusov ITEMU, ktorý chcem:", min_value=1, value=st.session_state.pocet, step=1, key="pocet_input")
     st.session_state.pocet = pocet 
 
 # 3. Časť - Ceny (SD a Yangy vedľa seba)
