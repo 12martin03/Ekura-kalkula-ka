@@ -120,6 +120,16 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
         
         if rozdiel_kus > 0:
             st.caption(f"Na jednom kuse ušetríš {rozdiel_kus:.3f}kk")
+            
+    # --- SEM TO VLOŽ ---
+    if cena_yang > 0 and sd_hodnota > 0:
+        bep_sek = (sd_hodnota * 1000) / cena_yang
+        
+        st.info(f"""
+        📉 **Break Even Point (Bod zlomu):**
+        Ceny by sa vyrovnali, keby 1kkk šek stál **{bep_sek:.1f} SD**.
+        *(Aktuálne rátaš s kurzom {st.session_state.kurz:.0f} SD)*
+        """)
 
 # Reset tlačidlo - OPRAVENÉ
 st.write("")
