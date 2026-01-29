@@ -128,7 +128,7 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
         st.info(f"""
         📉 **Ceny by sa vyrovnali, keby 1kkk šek stál **{bep_sek:.1f} SD**.
         *(Aktuálne rátaš s kurzom {st.session_state.kurz:.0f} SD)*
-        """)**
+        """)
 
 # Reset tlačidlo - OPRAVENÉ
 st.write("")
