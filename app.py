@@ -47,7 +47,7 @@ st.divider() # Čiara pre oddelenie
 st.session_state.kurz = st.number_input("Cena šeku (1kkk) v SD:", value=st.session_state.kurz, step=1.0)
 
 # 2. Časť - Stack Logic (Viac kusov)
-is_stack = st.checkbox("Idem kupovať item, ktorý má viac kusov v jednom (Stack - napr. požehy)", value=st.session_state.stack_mode, key="stack_mode")
+is_stack = st.checkbox("Idem kupovať item, ktorý má VIAC KUSOV v jednom stacku - napr. požehy)", value=st.session_state.stack_mode, key="stack_mode")
 
 pocet = 1
 if is_stack:
