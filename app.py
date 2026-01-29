@@ -39,7 +39,7 @@ def reset_app():
 st.title("Ekura - SD/Yang calc")
 
 # Tlačidlo pre otvorenie BM (Nenásilné, pod nadpisom)
-st.link_button("↗ Otvoriť Black Market", "https://www.ekura.cz/blackmarket", type="secondary")
+st.link_button("↗ Otvoriť Black Market", "https://www.ekura.cz/black_market/sindicate", type="secondary")
 
 st.divider() # Čiara pre oddelenie
 
