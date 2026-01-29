@@ -131,10 +131,10 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
         target_sd = (cena_yang * aktualny_kurz) / 1000
         
         st.info(f"""
-        🎯 **Target Price (Cieľová cena):**
+        🎯 **Target price:**
         Aby sa ti nákup vyrovnal cene v Yangoch, musel by si na BM zaplatiť max **{target_sd:.0f} SD**.
         
-        📉 **Break Even Point (Bod zlomu šeku):**
+        📉 **Break even point:**
         Ak by si to kúpil za týchto {sd_hodnota:.0f} SD, oplatilo by sa to len vtedy, 
         ak by cena šeku na trhu klesla/stúpla na **{bep_sek:.1f} SD**.
         """)
