@@ -135,8 +135,8 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
         Aby sa ti nákup vyrovnal cene v Yangoch, musel by si na BM zaplatiť max **{target_sd:.0f} SD**.
         
         📉 **Break even point:**
-        Ak by si to kúpil za týchto {sd_hodnota:.0f} SD, oplatilo by sa to len vtedy, 
-        ak by cena šeku na trhu klesla/stúpla na **{bep_sek:.1f} SD**.
+        Ak by si to kúpil za týchto {sd_hodnota:.0f} SD, oplatilo by sa to dovtedy, 
+        kým by cena šeku na trhu klesla/stúpla MAX na **{bep_sek:.1f} SD**.
         """)
 
     # --- ULOŽENIE DO HISTÓRIE ---
