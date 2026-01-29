@@ -52,7 +52,7 @@ st.number_input("Cena šeku (1kkk) v SD:", value=st.session_state.kurz, step=1.0
 
 # 2. Časť - Stack Logic
 # Checkbox je priamo napojený na kľúč 'stack_mode'
-is_stack = st.checkbox("Viac kusov (Stack)", key="stack_mode")
+is_stack = st.checkbox("zaškrtni, ak item má viac kusov (stack), napr. požehy", key="stack_mode")
 
 pocet = 1
 if is_stack:
@@ -63,10 +63,10 @@ if is_stack:
 col1, col2 = st.columns(2)
 with col1:
     # Cena SD, napojená na 'sd_input'
-    sd_hodnota = st.number_input("Cena BM (SD):", min_value=0.0, step=1.0, key="sd_input")
+    sd_hodnota = st.number_input("Cena CHCENEJ VECI na Black markete (v SD):", min_value=0.0, step=1.0, key="sd_input")
 with col2:
     # Cena Yang, napojená na 'yang_input'
-    yang_text = st.text_input("Celková cena (Yang):", placeholder="napr. 900kk", key="yang_input")
+    yang_text = st.text_input("Celková cena CHCENEJ VECI v hre (kk/kkk):", placeholder="napr. 900kk", key="yang_input")
 
 st.write("") 
 
