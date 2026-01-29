@@ -145,7 +145,7 @@ if st.button("VYPOČÍTAŤ", type="primary", use_container_width=True):
         "Yang Cena": f"{cena_yang:.2f}kk",
         "Ks": pocet,
         "Ušetríš": f"{rozdiel:.2f}kk" if rozdiel > 0 else f"{rozdiel:.2f}kk",
-        "Verdikt": "SD" if rozdiel > 0 else YANGY"
+        "Verdikt": "SD" if rozdiel > 0 else "YANGY"
     })
 
 # Reset tlačidlo - OPRAVENÉ
